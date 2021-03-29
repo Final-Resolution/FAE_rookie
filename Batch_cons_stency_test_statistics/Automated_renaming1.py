@@ -124,7 +124,7 @@ if __name__ == "__main__":
             file_path = path + fileList[n]
             #获取当前目录的芯片编号
             chip_num = get_chip_num(path)
-            print('chip_num :',chip_num)
+            #print('chip_num :',chip_num)
             #获取第一个文件首行的内容
             data = get_lines(file_path)
             #删除第一个元素
@@ -144,16 +144,17 @@ if __name__ == "__main__":
             #获取该文件的方向值
             dire = get_dire(data_float[comp_list[2]])
             dire = coor + dire
-            print('dire:' ,dire)
+            #print('dire:' ,dire)
             #重命名
             #设置旧文件名（就是路径+文件名）
             oldname=path+ os.sep + fileList[n]   # os.sep添加系统分隔符
             #设置新文件名
             newname=path + os.sep +'QMA6100_'+str(chip_num)+'_'+dire+'.DAT'
             os.renames(oldname,newname)   #用os模块中的rename方法对文件改名
-            print(oldname,'======>',newname)
+            #print(oldname,'======>',newname)
             n+=1            
         file_num+=1
+        print("QMA6100:" , str(file_num), "is OK!")
         
             
     

@@ -20,7 +20,7 @@ if __name__ == "__main__":
         path = path0 + file_list[file_num]
         #获取测试目录下的所有DAT文件，并存入列表中
         dat_list = os.listdir(path)
-        with pd.ExcelWriter(r'.\\QMA6100_'+ str(num) + '.xlsx') as writer:
+        with pd.ExcelWriter(r'.\\QMA6100_'+ str(num) + '_'+ str(n) + '.xlsx') as writer:
             dat_num = 0
             for dat_num in range(len(dat_list)):
                 dire = re.split("[_.]", dat_list[dat_num])[-2]
